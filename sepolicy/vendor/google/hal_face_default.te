@@ -48,6 +48,8 @@ get_prop(hal_face_default, camera_config_prop)
 get_prop(hal_face_default, camera_prop)
 get_prop(hal_face_default, vendor_faceauth_prop)
 
+dontaudit hal_face_default default_prop:file r_file_perms;
+
 hwbinder_use(hal_face_default);
 
 # Allow the face HAL to communicate with IStats.
@@ -71,4 +73,3 @@ hal_client_domain(hal_face_default, hal_thermal)
 # Allow the face HAL to talk to citadeld to verify the firmware version.
 allow hal_face_default citadeld_service:service_manager find;
 binder_call(hal_face_default, citadeld)
-

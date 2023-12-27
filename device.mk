@@ -215,6 +215,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.assist.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.assist.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.hardware.sensor.dynamic.head_tracker.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.dynamic.head_tracker.xml \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.barometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.barometer.xml \
@@ -282,6 +283,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.capture.enforce_legacy_copp_sr=true \
     persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24 \
     vendor.audio.offload.gapless.enabled=true \
+
+# Spatial Audio
+PRODUCT_PACKAGES += \
+	libspatialaudio
+
+# optimize spatializer effect
+PRODUCT_PROPERTY_OVERRIDES += \
+	audio.spatializer.effect.util_clamp_min=300
+
+# declare use of spatial audio
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.audio.spatializer_enabled=true
+
+# Spatial audio for speaker
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.vendor.audio.spatializer.speaker_enabled=true
 
 # MaxxAudio effect and add rotation monitor
 PRODUCT_PROPERTY_OVERRIDES += \

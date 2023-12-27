@@ -39,7 +39,6 @@ product/framework/uimremoteserverlibrary.jar
 product/framework/uimservicelibrary.jar
 
 # Radio
-product/priv-app/DMService/DMService.apk
 product/priv-app/DiagMon/DiagMon.apk
 product/priv-app/EuiccGoogle/EuiccGoogle.apk;PRESIGNED
 

@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk)
 
 # Enable mainline checking
-PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := strict
+# PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := strict
 
 #
 # All components inherited here go to system_ext image
@@ -32,8 +32,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 #
 # All components inherited here go to product image
 #
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_product.mk)
-
+$(call inherit-product, vendor/hentai/build/product/hentai_product.mk)
 #
 # All components inherited here go to vendor image
 #
@@ -64,7 +63,7 @@ ifneq (REL,$(PLATFORM_VERSION_CODENAME))
 endif
 
 PRODUCT_MANUFACTURER := Google
-PRODUCT_BRAND := Android
+PRODUCT_BRAND := google
 PRODUCT_NAME := aosp_coral
 PRODUCT_DEVICE := coral
-PRODUCT_MODEL := AOSP on coral
+PRODUCT_MODEL := Pixel 4 XL

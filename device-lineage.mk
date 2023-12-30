@@ -21,40 +21,18 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
     ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
-# Elmyra
-PRODUCT_PACKAGES += \
-    ElmyraService
 
 # EUICC
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml
 
-# GMS
-ifeq ($(WITH_GMS),true)
-GMS_MAKEFILE=gms_minimal.mk
-endif
-
 # Google Assistant
 PRODUCT_PRODUCT_PROPERTIES += ro.opa.eligible_device=true
-
-# Lineage Health
-include hardware/google/pixel/lineage_health/device.mk
-
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm
-
-# Parts
-PRODUCT_PACKAGES += \
-    GoogleParts
 
 # RCS
 PRODUCT_PACKAGES += \
     PresencePolling \
     RcsService
-
-# Touch
-include hardware/google/pixel/touch/device.mk
 
 # Build necessary packages for system_ext
 
@@ -210,3 +188,4 @@ PRODUCT_PACKAGES += \
 
 # Properties
 TARGET_VENDOR_PROP := $(LOCAL_PATH)/vendor.prop
+

@@ -37,3 +37,4 @@ PRODUCT_PACKAGES += \
     SettingsOverlayG020J \
     SettingsOverlayG020P \
     SettingsOverlayG020Q \
+    SettingsResFloral

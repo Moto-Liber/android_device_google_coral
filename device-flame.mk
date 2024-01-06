@@ -40,3 +40,4 @@ PRODUCT_PACKAGES += \
     SettingsOverlayG020I_VN \
     SettingsOverlayG020M \
     SettingsOverlayG020N \
+    SettingsResFloral
